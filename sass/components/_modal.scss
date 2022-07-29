@@ -8,12 +8,13 @@
 
     opacity: 1;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &__is-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
 }
 
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
 
 .modal {
     position: absolute;
@@ -24,36 +25,38 @@
     min-width: 528px;
     min-height: 581px;
     background-color: var(--background-header-color);
+
+    &__close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+    
+            width: 30px;
+            height: 30px;
+            background-color: var(--background-header-color);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+
+                    &__icon {
+                          width: 11px;
+                          height: 11px;
+                          fill: #000000;
+                          transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+                           }
+                    &:hover,
+                    &:focus {
+                            border: 1px solid var(--accent);
+                        }
+                     &:hover .modal-close-icon,
+                     &:focus .modal-close-icon {
+                                fill: var(--accent);
+                         }
+        }
 }
 
-.modal-close {
-    position: absolute;
-    top: 8px;
-    right: 8px;
 
-    width: 30px;
-    height: 30px;
-    background-color: var(--background-header-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-}
 
-.modal-close-icon {
-    width: 11px;
-    height: 11px;
-    fill: #000000;
 
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.modal-close:hover,
-.modal-close:focus {
-    border: 1px solid var(--accent);
-}
-
-.modal-close:hover .modal-close-icon,
-.modal-close:focus .modal-close-icon {
-    fill: var(--accent);
-}

@@ -2,34 +2,14 @@
     background-color: var(--background-hero-footer-color);
     padding-top: 60px;
     padding-bottom: 59px;
+    &__main {
+            display: flex;
+        }
+        .footer-links {
+        margin-right: 93px;
+        }
 }
 
-.address-item-address {
-    color: var(--add-color-text);
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    text-decoration: none;
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.address-item-address:hover,
-.address-item-address:focus {
-    color: var(--accent);
-}
-
-.address-item-link {
-    color: var(--add-color-link);
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    text-decoration: none;
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 .address {
     margin-top: 21px;
@@ -37,22 +17,40 @@
     flex-direction: column;
     gap: 9px;
     margin-right: 70px;
+
+    &__item-address {
+            color: var(--add-color-text);
+            font-style: normal;
+            @include font (null, 14px, 1.71, 0.03em);
+            text-decoration: none;
+    
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+                &:hover,
+                &:focus {
+                        color: var(--accent);
+                    }
+        }      
+    &__item-link {
+       color: var(--add-color-link);
+       font-style: normal;
+    @include font (null, 14px, 1.71, 0.03em);
+       text-decoration: none;
+
+       transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+         &:hover,
+         &:focus {
+            color: var(--accent);
+        }
+   }
 }
 
+  
 /* альтернативный вариант отступов в адресе
-
 .address-item:not(:last-child) {
-	margin-bottom: 9px;
-} */
+	margin-bottom: 9px; } */
 
-.address-item-link:hover,
-.address-item-link:focus {
-    color: var(--accent);
-}
-
-.footer-main {
-    display: flex;
-}
 
 .footerlogo-web {
     color: var(--accent);
@@ -78,30 +76,30 @@
     background-color: rgba(255, 255, 255, 0.1);
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     &:hover,
+     &:focus {
+        background-color: var(--accent);
+    }
 }
 
-.item-card-links-bgr.for-footer:hover,
-.item-card-links-bgr.for-footer:focus {
-    background-color: var(--accent);
-}
+
 
 .item-card-icon.for-footer {
     fill: var(--add-color-text);
 }
 
-.footer-links {
-    margin-right: 93px;
-}
+
 
 .button.for-footer {
     padding-left: 28px;
     padding-right: 28px;
+     &:hover,
+     &:focus {
+        background-color: #188ce8;
+    }
+
 }
 
-.button.for-footer:hover,
-.button.for-footer:focus {
-    background-color: #188ce8;
-}
 
 .icon-for-footer {
     width: 24px;
@@ -117,36 +115,16 @@
     gap: 12px;
 }
 
-/* .label-email {
-	display: flex;
-	align-items: center;
-	letter-spacing: 0.03em;
-	color: rgba(255, 255, 255, 0.6);
-
-	font-size: 16px;
-	line-height: 1.25;
-	width: 358px;
-	height: 50px;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	border-radius: 4px;
-
-	transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-} */
 
 .input-email {
-    background-color: var(--background-hero-footer-color);
-
-    color: var(--add-color-text);
-    padding-left: 16px;
-
     display: flex;
     align-items: center;
-    letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
+    background-color: var(--background-hero-footer-color);
+    padding-left: 16px;
+    
+    @include font (null, 16px, 1.25, 0.03em);
 
-    font-size: 16px;
-    line-height: 1.25;
     width: 358px;
     height: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -155,10 +133,11 @@
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: none;
+         &:hover,
+         &:focus {
+         box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
+         border-color: var(--accent);
+    }
+
 }
 
-.input-email:hover,
-.input-email:focus {
-    box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
-    border-color: var(--accent);
-}
